@@ -1,5 +1,6 @@
 from functools import wraps
 
+
 def input_error(func):
     @wraps(func)    
     def inner(*args, **kwargs):
@@ -24,6 +25,7 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, *args
 
+
 @input_error
 def add_contact(args, contacts):
     """
@@ -34,6 +36,7 @@ def add_contact(args, contacts):
     contacts[name] = phone
     return "Contact added."
 
+
 @input_error
 def change_contact(args, contacts):
     """
@@ -43,6 +46,7 @@ def change_contact(args, contacts):
     name, phone = args
     contacts[name] = phone
     return "Contact updated."
+
 
 @input_error
 def show_phone(args, contacts):
@@ -69,7 +73,7 @@ def show_all(contacts):
 
     return "\n".join(lines)
 
-@input_error
+
 def main():
     """
     Main loop for the assistant bot.
