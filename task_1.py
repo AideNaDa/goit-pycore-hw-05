@@ -1,4 +1,6 @@
-def caching_fibonacci():
+from typing import Callable
+
+def caching_fibonacci() -> Callable[[int], int]:
     """
     Return a Fibonacci function with caching.
     """
@@ -14,8 +16,8 @@ def caching_fibonacci():
             return 1
         if n in cache:
             return cache[n]
-        
+
         cache[n] = fibonacci(n - 1) + fibonacci(n - 2)
         return cache[n]
-        
+
     return fibonacci
