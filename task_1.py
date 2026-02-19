@@ -1,5 +1,6 @@
 from typing import Callable
 
+
 def caching_fibonacci() -> Callable[[int], int]:
     """
     Return a Fibonacci function with caching.
